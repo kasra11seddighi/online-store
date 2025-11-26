@@ -209,11 +209,17 @@ closeBasketBtn.addEventListener("click", closeBasket);
 clearBtn.addEventListener("click", clearBasket);
 
 
-const loading = document.querySelector(".loading-screen")
-function showContent () {
-  loading.classList.add("hidden");
-}
-
+function startLoader() {
+            const loadTime = 2000; // مدت زمان نمایش لودر
+            setTimeout(() => {
+                document.getElementById("loader").classList.add("fade-out");
+                setTimeout(() => {
+                    document.getElementById("loader").style.display = "none";
+                    document.getElementById("main-content").style.display = "block";
+                }, 500);
+            }, loadTime);
+        }
+2
 // ============ INIT ============
 loadBasket();
 showProducts();
